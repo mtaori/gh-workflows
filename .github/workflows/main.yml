@@ -21,8 +21,15 @@ jobs:
         needs: docker-image
         runs-on: ubuntu-latest
         steps: 
-            - name: show container
-              run: docker ps 
+            - name: Get public IP address
+              run: |
+                echo "Waiting for the server to start..."
+                PUBLIC_IP=$(curl -s ifconfig.me)
+                echo "Public IP: $PUBLIC_IP"
+                echo "Access the app here: http://$PUBLIC_IP:6010"
+      
+            - name: Display URL
+              run:  echo "http://$PUBLIC_IP:6010"
         
 
             
