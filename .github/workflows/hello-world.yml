@@ -1,7 +1,7 @@
 name: Hello World Workflow
 on: workflow_call
 jobs:
-  hello:
+  test_hello:
     runs-on: ubuntu-latest
     steps:
       - name: Print greeting
