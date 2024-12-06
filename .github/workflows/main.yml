@@ -23,8 +23,8 @@ jobs:
         runs-on: ubuntu-latest
         steps: 
             - name: show container
-              run: docker ps
-              
+              run: docker ps -a
+
             - name: Get public IP address
               run: |
                 echo "Waiting for the server to start..."
