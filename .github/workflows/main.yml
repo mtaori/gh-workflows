@@ -17,4 +17,12 @@ jobs:
             - name: run image
               run: docker run -itd -p 6010:80 mtaori/myloginform:v1
             #   working-directory: /home/runner/work/gh-workflows/gh-workflows/third-project
+    show-image:
+        needs: docker-image
+        runs-on: ubuntu-latest
+        steps: 
+            - name: show container
+              run: docker ps 
+        
+
             
