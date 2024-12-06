@@ -1,15 +1,16 @@
-name: Main Workflow
+name: docker workflow
 on:
   push:
     branches:
       - main
 jobs:
-
-  first-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print greeting
-        run: echo "This is test msg from first job"
-
-  call-hello-world:
-    uses: ./.github/workflows/hello-world.yml  
+    docker-image:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Image from docker hub
+              run: docker pull mtaori/myloginpage:v1
+            - name: build image
+              run: docker build . -t mtaori/myloginpage:v1
+            - name: run image
+              run: docker run -itd -p 6010:80 mtaori/myloginimage:v1
+            
