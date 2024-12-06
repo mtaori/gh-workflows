@@ -1,0 +1,8 @@
+name: Main Workflow
+on:
+  push:
+    branches:
+      - main
+jobs:
+  call-hello-world:
+    uses: ./.github/workflows/hello-world.yml  
