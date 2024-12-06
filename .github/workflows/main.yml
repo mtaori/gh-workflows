@@ -11,10 +11,10 @@ jobs:
               run: docker login
             - name: Image from docker hub
               run: docker pull mtaori/myloginform:v1
-            - name: build image
-              run: docker build . -t mtaori/myloginform:v1
-              working-directory: /home/runner/work/gh-workflows/gh-workflows/third-project
+            # - name: build image
+            #   run: docker build . -t mtaori/myloginform:v1
+            #   working-directory: /home/runner/work/gh-workflows/gh-workflows/third-project
             - name: run image
               run: docker run -itd -p 6010:80 mtaori/myloginform:v1
-              working-directory: /home/runner/work/gh-workflows/gh-workflows/third-project
+            #   working-directory: /home/runner/work/gh-workflows/gh-workflows/third-project
             
