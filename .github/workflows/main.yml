@@ -4,5 +4,12 @@ on:
     branches:
       - main
 jobs:
+
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print greeting
+        run: echo "This is test msg from first job"
+
   call-hello-world:
     uses: ./.github/workflows/hello-world.yml  
