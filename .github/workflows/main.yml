@@ -13,6 +13,8 @@ jobs:
               run: docker pull mtaori/myloginform:v1
             - name: build image
               run: docker build . -t mtaori/myloginform:v1
+              working-directory: third-project
             - name: run image
               run: docker run -itd -p 6010:80 mtaori/myloginform:v1
+              working-directory: third-project
             
