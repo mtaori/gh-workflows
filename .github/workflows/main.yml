@@ -26,10 +26,7 @@ jobs:
                 echo "Waiting for the server to start..."
                 PUBLIC_IP=$(curl -s ifconfig.me)
                 echo "Public IP: $PUBLIC_IP"
-                echo "Access the app here: http://$PUBLIC_IP:6010"
-      
-            - name: Display URL
-              run:  echo "http://$PUBLIC_IP:6010"
+                echo "Access the app here: http://localhost:6010"
         
 
             
